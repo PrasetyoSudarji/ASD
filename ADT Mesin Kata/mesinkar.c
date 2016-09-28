@@ -18,7 +18,7 @@ void START(){
 	*/
 	/*Algoritma */
 	pita = fopen("pitakar.txt","r");
-	ADV;
+	ADV();
 	
 }
 

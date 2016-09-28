@@ -5,6 +5,7 @@
 
 /* ***** Konstanta ***** */
 #define BLANK ' '
+#define KOMA ','
 #define NMax 50
 
 /* ***** Definisi Type Kata ***** */
