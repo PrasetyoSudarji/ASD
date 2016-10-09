@@ -1,40 +1,43 @@
 #include <stdio.h>
-#include "stackt.h"
+#include "queue.h"
 
 int main(){
-	Stack S;
-	int Elmt,X,idxTop;
-	CreateEmpty(&S);
+	Queue Q;
+	int Elmt,X,idxHead,Max;
+	
+	printf("Tentukan Max Queue : \n");
+	scanf("%d",&Max);
+	CreateEmpty(&Q,Max);
 	Menuawal :
 	printf("\n=========================\n");
-	printf("Stack Menu\n");
-	printf("1. Push\n");
-	printf("2. Pop\n");
-	printf("3. View Stack\n");
+	printf("Queue Menu\n");
+	printf("1. Add\n");
+	printf("2. Dell\n");
+	printf("3. View Queue\n");
 	printf("4. Exit\n");
 	printf("Masukkan Pilihan Anda : ");
 	scanf("%d",&X);
 	switch(X){
 		case 1:	printf("\n==================================\n");
-				printf("Masukkan Nilai yang akan di Push : "); 
+				printf("Masukkan Nilai yang akan di Add : "); 
 				scanf("%d",&Elmt);
-				Push(&S,Elmt);
+				Add(&Q,Elmt);
 				goto Menuawal;
 				break;
 		case 2: printf("\n==================================\n");
-				Pop(&S,&Elmt);
-				printf("Pop Success\n");
+				Del(&Q,&Elmt);
+				printf("Deleting Success\n");
 				goto Menuawal;
 				break;
 		case 3: printf("\n==================================\n");
-				printf("Info Stack \n");
+				printf("Info Queue \n");
 				printf("============\n");
-				idxTop = Top(S);
-				while(Top(S)!=Nil){	
-					printf("%d\n",InfoTop(S));
-					Top(S)--;
+				idxHead = Head(Q);
+				while(Head(Q)!=Tail(Q)){
+					printf("%d\n",InfoHead(Q));
+					Head(Q)++;
 				}
-				Top(S)=idxTop;
+				Head(Q)=idxHead;
 				printf("============\n");
 				goto Menuawal;
 				break;
